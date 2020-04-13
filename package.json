@@ -1,0 +1,20 @@
+{
+  "name": "devconnector",
+  "version": "1.0.0",
+  "description": "Social networking for developers",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "author": "Daniel James",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "gravatar": "^1.8.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.3"
+  }
+}
