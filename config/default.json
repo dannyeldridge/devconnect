@@ -1,0 +1,6 @@
+{
+  "MONGO_URI": "mongodb+srv://djames:gdzUBFqlBqqL01bn@cluster1-629j2.mongodb.net/test?retryWrites=true&w=majority",
+  "JWT_SECRET": "mysecrettoken",
+  "GITHUB_CLIENT_ID": "9cbe7ec9a9ba5067aa3c",
+  "GITHUB_CLIENT_SECRET": "10bc4238e72a6219f41d87477177329a89fb8db4"
+}
