@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Daniel James",
   "license": "MIT",
@@ -17,7 +19,9 @@
     "gravatar": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.9",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "uuid": "^7.0.3",
+    "uuidv4": "^6.0.7"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
