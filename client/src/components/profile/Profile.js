@@ -5,32 +5,41 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import { getProfileById } from '../../actions/profile';
 import { useEffect } from 'react';
+import ProfileTop from './ProfileTop';
 
 const Profile = ({
-  match,
   getProfileById,
   profile: { profile, loading },
   auth,
+  match,
 }) => {
   useEffect(() => {
-    console.log('hello!');
-    console.log(match.params.id);
     getProfileById(match.params.id);
-  }, []);
+  }, [getProfileById, match.params.id]);
 
   return (
     <Fragment>
-      {profile === null || loading ? <Spinner /> : <Fragment>Profile</Fragment>}
-      <Link to='/profiles' className='btn btn-light'>
-        Back to Profiles
-      </Link>
-      {auth.isAuthenticated &&
-        auth.loading === false &&
-        auth.user._id === profile.user._id && (
-          <Link to='/edit-profile' className='btn btn-dark'>
-            Edit Profile
+      {profile === null || loading ? (
+        <Spinner />
+      ) : (
+        <Fragment>
+          Profile
+          <Link to='/profiles' className='btn btn-light'>
+            Back to Profiles
           </Link>
-        )}
+          {auth.isAuthenticated &&
+            auth.loading === false &&
+            auth.user._id === profile.user._id && (
+              <Link to='/edit-profile' className='btn btn-dark'>
+                Edit Profile
+              </Link>
+            )}
+          <div class='profile-grid my-1'>
+            <ProfileTop profile={profile} />
+            test
+          </div>
+        </Fragment>
+      )}
     </Fragment>
   );
 };
